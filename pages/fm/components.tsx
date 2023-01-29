@@ -1,6 +1,6 @@
-import React from 'react';
-import { FmButton } from '@/components/FM/Button/FmButton';
-import { IoMdPlay } from 'react-icons/io';
+import React from "react";
+import { FmButton } from "@/components/FM/Button/FmButton";
+import { IoMdPlay } from "react-icons/io";
 
 const NbComponents = () => {
   return (

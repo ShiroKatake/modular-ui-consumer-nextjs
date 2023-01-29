@@ -1,5 +1,5 @@
-import React from 'react';
-import { ButtonProps, StyledMoCoButton } from './MoCoButton.styled';
+import React from "react";
+import { ButtonProps, StyledMoCoButton } from "./MoCoButton.styled";
 
 interface Props extends ButtonProps {
   children: string;

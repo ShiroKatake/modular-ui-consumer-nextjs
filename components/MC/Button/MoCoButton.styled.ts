@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { StyledButton } from 'modular-ui/Button/Button.styled';
+import styled, { css } from "styled-components";
+import { StyledButton } from "modular-ui/Button/Button.styled";
 
 export interface ButtonProps {
   primary?: boolean;

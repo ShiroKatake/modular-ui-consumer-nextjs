@@ -1,5 +1,5 @@
-import React from 'react';
-import { ButtonProps, StyledFmButton } from './FmButton.styled';
+import React from "react";
+import { ButtonProps, StyledFmButton } from "./FmButton.styled";
 
 interface Props extends ButtonProps {
   children: React.ReactNode;

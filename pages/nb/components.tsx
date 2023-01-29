@@ -1,5 +1,5 @@
-import React from 'react';
-import { NbButton } from '@/components/NB/Button/NbButton';
+import React from "react";
+import { NbButton } from "@/components/NB/Button/NbButton";
 
 const NbComponents = () => {
   return (

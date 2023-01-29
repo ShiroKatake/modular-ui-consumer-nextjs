@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyledNbButton } from './NbButton.styled';
+import React from "react";
+import { StyledNbButton } from "./NbButton.styled";
 
 interface Props {
   children: string;

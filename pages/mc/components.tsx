@@ -1,5 +1,5 @@
-import React from 'react';
-import { MoCoButton } from '@/components/MC/Button/MoCoButton';
+import React from "react";
+import { MoCoButton } from "@/components/MC/Button/MoCoButton";
 
 const NbComponents = () => {
   return (

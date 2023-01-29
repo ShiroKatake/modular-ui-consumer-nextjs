@@ -1,1 +1,1 @@
-declare module 'modular-ui';
+declare module "modular-ui";
