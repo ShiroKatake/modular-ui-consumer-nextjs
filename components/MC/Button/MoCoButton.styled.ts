@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { StyledButton } from "modular-ui/Button/Button.styled";
+import { Button } from "modular-ui/Button";
 
-export interface ButtonProps {
+export interface MoCoButtonProps {
   primary?: boolean;
 }
 
@@ -19,7 +19,7 @@ const secondaryStyles = css`
   color:  hsl(233, 100%, 60%);
 `;
 
-export const StyledMoCoButton = styled(StyledButton) <ButtonProps>`
+export const StyledMoCoButton = styled(Button) <MoCoButtonProps>`
   display: block;
   font-size: 1rem;
   font-weight: 700;

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { StyledButton } from "modular-ui/Button/Button.styled";
+import { Button } from "modular-ui/Button";
 
-export interface ButtonProps {
+export interface FmButtonProps {
   primary?: boolean;
 }
 
@@ -27,7 +27,7 @@ const secondaryStyles = css`
   }
 `;
 
-export const StyledFmButton = styled(StyledButton) <ButtonProps>`
+export const StyledFmButton = styled(Button) <FmButtonProps>`
   display: flex;
   align-items: center;
   border-radius: 4px;

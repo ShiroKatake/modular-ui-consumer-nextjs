@@ -1,11 +1,8 @@
 import React from "react";
-import { ButtonProps, StyledFmButton } from "./FmButton.styled";
+import { FmButtonProps, StyledFmButton } from "./FmButton.styled";
+import { ButtonProps } from "modular-ui/Button";
 
-interface Props extends ButtonProps {
-  children: React.ReactNode;
-}
-
-export const FmButton: React.FC<Props> = ({ children, primary }) => {
+export const FmButton: React.FC<ButtonProps & FmButtonProps> = ({ children, primary }) => {
   return (
     <StyledFmButton primary={primary}>{children}</StyledFmButton>
   );

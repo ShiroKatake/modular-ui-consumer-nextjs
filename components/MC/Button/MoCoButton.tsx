@@ -1,11 +1,8 @@
 import React from "react";
-import { ButtonProps, StyledMoCoButton } from "./MoCoButton.styled";
+import { MoCoButtonProps, StyledMoCoButton } from "./MoCoButton.styled";
+import { ButtonProps } from "modular-ui/Button";
 
-interface Props extends ButtonProps {
-  children: string;
-}
-
-export const MoCoButton: React.FC<Props> = ({ children, primary }) => {
+export const MoCoButton: React.FC<ButtonProps & MoCoButtonProps> = ({ children, primary }) => {
   return (
     <StyledMoCoButton primary={primary}>{children}</StyledMoCoButton>
   );

@@ -1,11 +1,8 @@
 import React from "react";
 import { StyledNbButton } from "./NbButton.styled";
+import { ButtonProps } from "modular-ui/Button";
 
-interface Props {
-  children: string;
-}
-
-export const NbButton: React.FC<Props> = ({ children }) => {
+export const NbButton: React.FC<ButtonProps> = ({ children }) => {
   return (
     <StyledNbButton>{children}</StyledNbButton>
   );

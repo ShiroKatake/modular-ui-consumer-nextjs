@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "modular-ui";
+import { Button } from "modular-ui/Button";
 
 export const StyledNbButton = styled(Button)`
   background-color: #f16222;
