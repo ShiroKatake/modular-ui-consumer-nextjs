@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Button } from "modular-ui/Button";
 import { NavMenu } from "modular-ui/NavMenu";
 import { NavUl, NavLi, NavA, NestedNavUl, NestedNavLi, NestedNavA } from "modular-ui/NavMenu/NavMenu.styled";
