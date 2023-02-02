@@ -1,15 +1,34 @@
 import Link from "next/link";
-import React from "react";
-import { LogoHamburgerWrapper, StyledChevron, StyledLanguage, StyledLogo, StyledLanguageButton, StyledNavMenu } from "./McNavMenu.styled";
+import React, { useState } from "react";
+import { Footer } from "../Footer/Footer";
+import {
+  ChevronIcon,
+  LanguageIcon,
+  LanguageButton,
+  StyledNavMenu,
+  LanguageList,
+  LanguageListItem,
+  LanguageContainer,
+  NavLinkDescription,
+} from "./McNavMenu.styled";
+import { NavHome } from "./subcomponents/NavHome";
 
-const navLinks = [
+type NavLinks = {
+  href: string;
+  text: string;
+  description?: string;
+}
+
+const navLinks: NavLinks[] = [
   {
     href: "https://conversations.movember.com/en-us/conversations/",
-    text: "Practice Conversations"
+    text: "Practice Conversations",
+    description: "Use your skills in practice conversations"
   },
   {
     href: "https://conversations.movember.com/en-us/ALEC/",
-    text: "Learn The Basics"
+    text: "Learn The Basics",
+    description: "Get familiar with basic skills & build your toolkit"
   },
   {
     href: "https://conversations.movember.com/en-us/resources/",
@@ -25,35 +44,98 @@ const navLinks = [
   }
 ];
 
-export const McNavMenu: React.FC = () => {
-
-  const renderHomeBar = () => {
-    return (
-      <LogoHamburgerWrapper>
-        <Link href="https://conversations.movember.com/en-us/">
-          <StyledLogo />
-        </Link>
-        {/* <StyledHamburgerButton onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? <StyledCross /> : <StyledHamburger />}
-        </StyledHamburgerButton> */}
-      </LogoHamburgerWrapper>
-    );
+const languageList = [
+  {
+    href: "",
+    text: "English"
+  },
+  {
+    href: "",
+    text: "English (AU)"
+  },
+  {
+    href: "",
+    text: "English (UK)"
+  },
+  {
+    href: "",
+    text: "English (CA)"
+  },
+  {
+    href: "",
+    text: "French (CA)",
+  },
+  {
+    href: "",
+    text: "French",
+  },
+  {
+    href: "",
+    text: "German",
   }
+]
+
+type NavLink = {
+  href: string;
+  text: React.ReactNode;
+}
+
+const transformNavLinks = (navLinks: NavLinks[]) => {
+  const result: NavLink[] = [];
+
+  navLinks.map((navLink) => {
+    const link: NavLink = {
+      href: navLink.href,
+      text: <>{navLink.text}</>
+    }
+
+    if (navLink.description) {
+      link.text =
+        <>
+          {navLink.text}
+          <NavLinkDescription>{navLink.description}</NavLinkDescription>
+        </>
+    }
+
+    result.push(link);
+  });
+
+  return result;
+}
+
+export const McNavMenu: React.FC = () => {
+  const [isLanguageExpanded, setIsLanguageExpanded] = useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const renderLanguageDropdown = () => {
     return (
-      <StyledLanguageButton>
-        <StyledLanguage />
-        <span>Language</span>
-        <StyledChevron />
-      </StyledLanguageButton>
+      <>
+        <LanguageContainer>
+          <LanguageButton onClick={() => setIsLanguageExpanded(!isLanguageExpanded)}>
+            <LanguageIcon />
+            Language
+            <ChevronIcon />
+          </LanguageButton>
+          <LanguageList isLanguageExpanded={isLanguageExpanded}>
+            {languageList.map((language) => {
+              return (
+                <LanguageListItem>
+                  <Link href={language.href}>{language.text}</Link>
+                </LanguageListItem>
+              );
+            })}
+          </LanguageList>
+        </LanguageContainer>
+        <Footer />
+      </>
     )
   }
 
   return (
     <StyledNavMenu
-      childrenBefore={renderHomeBar()}
-      navLinks={navLinks}
+      isNavExpanded={isNavExpanded}
+      childrenBefore={<NavHome isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />}
+      navLinks={transformNavLinks(navLinks)}
       childrenAfter={renderLanguageDropdown()}
     />
   );
