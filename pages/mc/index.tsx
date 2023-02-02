@@ -11,7 +11,7 @@ const NbComponents = () => {
       <MoCoButton>Start a practice conversation</MoCoButton>
       <MoCoButton primary={false}>View More Articles & Resources</MoCoButton>
     </div>
-  )
+  );
 }
 
 export default NbComponents;

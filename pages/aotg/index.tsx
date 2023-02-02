@@ -7,7 +7,7 @@ const NbComponents = () => {
     <div>
       <AotgButton><StyledFist /></AotgButton>
     </div>
-  )
+  );
 }
 
 export default NbComponents;

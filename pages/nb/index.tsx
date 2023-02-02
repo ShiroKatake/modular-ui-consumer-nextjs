@@ -6,7 +6,7 @@ const NbComponents = () => {
     <div>
       <NbButton>Get a guide</NbButton>
     </div>
-  )
+  );
 }
 
 export default NbComponents;
