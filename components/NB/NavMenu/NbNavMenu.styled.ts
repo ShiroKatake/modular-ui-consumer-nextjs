@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "modular-ui/Button";
 import { NavMenu } from "modular-ui/NavMenu";
-import { NavUl, NavLi, NavA, NestedNavUl, NestedNavLi, NestedNavA } from "modular-ui/NavMenu/NavMenu.styled";
+import { NavUl, NavLi, NavA, NestedNavUl, NestedNavLi, NestedNavA, resetStyle } from "modular-ui/NavMenu/NavMenu.styled";
 import NbNutDark from "./assets/nb_nut.svg";
 import NbNutLight from "./assets/nb_nut_light.svg";
 
@@ -36,6 +36,7 @@ export const StyledNavMenu = styled(NavMenu) <Toggleable>`
   letter-spacing: 1px;
 
   ${NavUl} {
+    ${resetStyle}
     display: flex;
     align-items: center;
     gap: 24px;

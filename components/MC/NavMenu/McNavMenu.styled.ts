@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Button } from "modular-ui/Button";
 import { NavMenu } from "modular-ui/NavMenu";
-import { NavUl, NavLi, NavA } from "modular-ui/NavMenu/NavMenu.styled";
+import { NavUl, NavLi, NavA, resetStyle } from "modular-ui/NavMenu/NavMenu.styled";
 import MocoLogo from "./assets/mc_logo.svg";
 import MocoChevron from "./assets/mc_chevron.svg";
 import MocoLanguage from "./assets/mc_language.svg";
@@ -122,6 +122,7 @@ export const StyledNavMenu = styled(NavMenu) <NavToggleable>`
   font-weight: 600;
 
   ${NavUl} {
+    ${resetStyle}
     display: flex;
     margin: 0 auto;
   }

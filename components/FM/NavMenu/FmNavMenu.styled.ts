@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "modular-ui/Button";
 import { NavMenu } from "modular-ui/NavMenu";
-import { NavUl, NavLi, NavA, NestedNavUl, NestedNavLi, NestedNavA } from "modular-ui/NavMenu/NavMenu.styled";
+import { NavUl, NavLi, NavA, NestedNavUl, NestedNavLi, NestedNavA, resetStyle } from "modular-ui/NavMenu/NavMenu.styled";
 import { StyledFmButton } from "../Button/FmButton.styled";
 import FmLogo from "./assets/fm_logo.svg";
 import FmHamburger from "./assets/fm_hamburger.svg";
@@ -70,6 +70,7 @@ export const StyledNavMenu = styled(NavMenu) <Toggleable>`
   width: 100vw;
 
   ${NavUl} {
+    ${resetStyle}
     ${({ isExpanded }) => isExpanded ? `display: flex` : `display: none`};
     align-items: center;
     gap: 30px;
@@ -79,6 +80,7 @@ export const StyledNavMenu = styled(NavMenu) <Toggleable>`
   }
 
   ${NestedNavUl} {
+    ${resetStyle}
     display: flex;
   }
 
